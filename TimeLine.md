@@ -1,64 +1,140 @@
 # Project Timeline
 
-## Gantt Chart
+## Gantt Chart (Parallel Workflow)
 ```mermaid
 gantt
     title Event Discovery Aggregator - Spring 2026
     dateFormat  YYYY-MM-DD
     
-    section Phase 1: Foundation
-    Project Setup           :done, p1a, 2026-01-13, 3d
-    Problem Statement       :active, p1b, 2026-01-16, 5d
-    Requirements Doc        :p1c, 2026-01-21, 7d
+    section Phase 1: Foundation (All)
+    Repo Setup & Docs           :done, p1a, 2026-01-13, 7d
+    Problem Statement           :active, p1b, 2026-01-16, 5d
+    Requirements Doc            :p1c, 2026-01-21, 7d
     
-    section Phase 2: Backend Core
-    Rust Scaffolding        :p2a, 2026-01-28, 5d
-    Database Setup          :p2b, 2026-02-02, 3d
-    Data Models             :p2c, 2026-02-05, 4d
-    Basic API Endpoints     :p2d, 2026-02-09, 5d
+    section Coordinator / Backend Lead
+    Backend Scaffolding         :c1, 2026-01-20, 5d
+    Database Schema             :c2, 2026-01-25, 4d
+    API Endpoints               :c3, 2026-01-29, 7d
+    API Refinement              :c4, 2026-02-05, 5d
+    Code Review & Support       :c5, 2026-02-10, 30d
     
-    section Phase 3: Data Ingestion
-    Research Sources        :p3a, 2026-02-14, 4d
-    Build First Scraper     :p3b, 2026-02-18, 7d
-    Event Normalization     :p3c, 2026-02-25, 5d
+    section Data Engineer
+    Research Sources            :d1, 2026-01-20, 7d
+    Scraper Architecture        :d2, 2026-01-27, 5d
+    Scraper Prototype (Local)   :d3, 2026-02-01, 7d
+    Integrate with DB           :d4, 2026-02-08, 7d
+    Additional Scrapers         :d5, 2026-02-15, 14d
+    Deduplication Logic         :d6, 2026-03-01, 7d
     
-    section Phase 4: Frontend
-    React Setup             :p4a, 2026-03-02, 4d
-    Event List UI           :p4b, 2026-03-06, 5d
-    Event Detail UI         :p4c, 2026-03-11, 4d
-    Search UI               :p4d, 2026-03-15, 4d
+    section AI/LLM Engineer
+    Claude API Research         :a1, 2026-01-20, 7d
+    Prompt Prototyping          :a2, 2026-01-27, 10d
+    LLM Service Module          :a3, 2026-02-06, 7d
+    Summarization Integration   :a4, 2026-02-13, 10d
+    NL Search Implementation    :a5, 2026-02-23, 14d
+    Prompt Refinement           :a6, 2026-03-09, 14d
     
-    section Phase 5: LLM Integration
-    Anthropic API Setup     :p5a, 2026-03-19, 3d
-    Summarization           :p5b, 2026-03-22, 7d
-    NL Search               :p5c, 2026-03-29, 7d
+    section Frontend Developer
+    Wireframes & Mockups        :f1, 2026-01-20, 7d
+    React Setup                 :f2, 2026-01-27, 4d
+    UI Components (Mock Data)   :f3, 2026-01-31, 10d
+    Connect to Real API         :f4, 2026-02-10, 7d
+    Search UI                   :f5, 2026-02-17, 7d
+    NL Search UI                :f6, 2026-02-24, 7d
+    UI Polish                   :f7, 2026-03-03, 14d
     
-    section Phase 6: Polish
-    Testing                 :p6a, 2026-04-05, 7d
-    Documentation           :p6b, 2026-04-12, 5d
-    Presentation Prep       :p6c, 2026-04-17, 7d
-    Final Presentation      :milestone, p6d, 2026-04-24, 1d
+    section Full Stack / QA
+    CI/CD Setup                 :q1, 2026-01-20, 5d
+    Testing Framework           :q2, 2026-01-25, 7d
+    API Contract / OpenAPI      :q3, 2026-02-01, 5d
+    Integration Tests           :q4, 2026-02-06, ongoing, 2026-03-15
+    Documentation               :q5, 2026-03-01, 21d
+    Bug Fixes & Support         :q6, 2026-02-15, 40d
+    
+    section Phase 6: Final (All)
+    Testing Sprint              :p6a, 2026-04-01, 10d
+    Documentation Final         :p6b, 2026-04-11, 7d
+    Presentation Prep           :p6c, 2026-04-18, 6d
+    Final Presentation          :milestone, p6d, 2026-04-24, 1d
 ```
 
-## Milestone Summary
+## Parallel Work Summary
 
-| Milestone | Target Date | Capstone Task |
-|-----------|-------------|---------------|
-| Problem Statement Complete | Jan 23, 2026 | Task 1 |
-| System Requirements Spec | Feb 7, 2026 | Task 2 |
-| Architecture Design | Mar 1, 2026 | Task 3 |
-| Midcourse Presentation | Mar 15, 2026 | Task 4 |
-| Final Presentation | Apr 24, 2026 | Final |
+| Week | Coordinator | Data Engineer | AI/LLM Engineer | Frontend Dev | Full Stack/QA |
+|------|-------------|---------------|-----------------|--------------|---------------|
+| 1-2 | Docs + Start backend | Docs + Research sources | Docs + Claude research | Docs + Wireframes | Docs + CI/CD |
+| 3-4 | DB schema + API endpoints | Scraper architecture + prototype | Prompt prototyping | React setup + mock UI | Testing framework + OpenAPI spec |
+| 5-6 | API refinement | Integrate scrapers with DB | LLM service module | Connect UI to API | Integration tests |
+| 7-8 | Support + review | Additional scrapers | Summarization | Search UI | Documentation |
+| 9-10 | Support + review | Deduplication | NL search | NL search UI | Bug fixes |
+| 11-12 | Support + review | Polish | Prompt refinement | UI polish | Documentation |
+| 13-14 | Presentation | Presentation | Presentation | Presentation | Presentation |
 
-## Sprint Schedule
+## Critical Dependencies
+```mermaid
+flowchart LR
+    subgraph Week 1-2
+        A[Repo & Docs]
+    end
+    
+    subgraph Week 3-4
+        B[API Endpoints]
+        C[Scraper Prototype]
+        D[Prompt Prototypes]
+        E[Mock UI]
+        F[OpenAPI Spec]
+    end
+    
+    subgraph Week 5-6
+        G[Scrapers → DB]
+        H[LLM Service]
+        I[UI → Real API]
+    end
+    
+    subgraph Week 7+
+        J[Full Integration]
+    end
+    
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+    
+    B --> G
+    B --> I
+    F --> E
+    
+    C --> G
+    D --> H
+    G --> H
+    
+    H --> J
+    I --> J
+    G --> J
+```
 
-| Sprint | Dates | Focus |
-|--------|-------|-------|
-| Sprint 1 | Jan 13 - Jan 26 | Foundation, documentation |
-| Sprint 2 | Jan 27 - Feb 9 | Backend scaffolding |
-| Sprint 3 | Feb 10 - Feb 23 | Data models, API endpoints |
-| Sprint 4 | Feb 24 - Mar 9 | Scraper, ingestion pipeline |
-| Sprint 5 | Mar 10 - Mar 23 | Frontend MVP |
-| Sprint 6 | Mar 24 - Apr 6 | LLM integration |
-| Sprint 7 | Apr 7 - Apr 20 | Polish, testing |
-| Sprint 8 | Apr 21 - Apr 26 | Presentation prep |
+## Milestone Checkpoints
+
+| Date | Milestone | Who Presents |
+|------|-----------|--------------|
+| Jan 23 | Problem Statement & Timeline | Coordinator |
+| Feb 7 | System Requirements Spec | All |
+| Feb 14 | Backend API Demo | Coordinator |
+| Feb 21 | Scraper Demo (data flowing) | Data Engineer |
+| Mar 1 | Architecture Design Doc | All |
+| Mar 7 | Frontend Demo (with real data) | Frontend Dev |
+| Mar 15 | Midcourse Presentation | All |
+| Mar 21 | LLM Integration Demo | AI Engineer |
+| Apr 10 | Feature Complete | All |
+| Apr 24 | Final Presentation | All |
+
+## Risk Mitigation
+
+| Risk | Mitigation | Owner |
+|------|------------|-------|
+| Backend delays block everyone | OpenAPI spec + mock data enables parallel work | Full Stack |
+| Scraper sources change/break | Build 3-5 scrapers, only need 2 working | Data Engineer |
+| LLM responses unpredictable | Start prompt engineering early, iterate | AI Engineer |
+| Integration issues | Weekly integration checkpoints | Full Stack |
+| Scope creep | MVP first, stretch goals documented separately | Coordinator |
