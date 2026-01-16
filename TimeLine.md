@@ -4,14 +4,14 @@
 ```mermaid
 gantt
     title Event Discovery Aggregator - Spring 2026
-    dateFormat  YYYY-MM-DD
+    dateFormat YYYY-MM-DD
     
-    section Phase 1: Foundation (All)
-    Repo Setup & Docs           :done, p1a, 2026-01-13, 7d
-    Problem Statement           :active, p1b, 2026-01-16, 5d
+    section Foundation
+    Repo Setup & Docs           :p1a, 2026-01-13, 7d
+    Problem Statement           :p1b, 2026-01-16, 5d
     Requirements Doc            :p1c, 2026-01-21, 7d
     
-    section Coordinator / Backend Lead
+    section Coordinator
     Backend Scaffolding         :c1, 2026-01-20, 5d
     Database Schema             :c2, 2026-01-25, 4d
     API Endpoints               :c3, 2026-01-29, 7d
@@ -21,41 +21,39 @@ gantt
     section Data Engineer
     Research Sources            :d1, 2026-01-20, 7d
     Scraper Architecture        :d2, 2026-01-27, 5d
-    Scraper Prototype (Local)   :d3, 2026-02-01, 7d
+    Scraper Prototype           :d3, 2026-02-01, 7d
     Integrate with DB           :d4, 2026-02-08, 7d
     Additional Scrapers         :d5, 2026-02-15, 14d
     Deduplication Logic         :d6, 2026-03-01, 7d
     
-    section AI/LLM Engineer
+    section AI Engineer
     Claude API Research         :a1, 2026-01-20, 7d
     Prompt Prototyping          :a2, 2026-01-27, 10d
     LLM Service Module          :a3, 2026-02-06, 7d
-    Summarization Integration   :a4, 2026-02-13, 10d
-    NL Search Implementation    :a5, 2026-02-23, 14d
+    Summarization               :a4, 2026-02-13, 10d
+    NL Search                   :a5, 2026-02-23, 14d
     Prompt Refinement           :a6, 2026-03-09, 14d
     
-    section Frontend Developer
+    section Frontend Dev
     Wireframes & Mockups        :f1, 2026-01-20, 7d
     React Setup                 :f2, 2026-01-27, 4d
-    UI Components (Mock Data)   :f3, 2026-01-31, 10d
-    Connect to Real API         :f4, 2026-02-10, 7d
+    UI Components               :f3, 2026-01-31, 10d
+    Connect to API              :f4, 2026-02-10, 7d
     Search UI                   :f5, 2026-02-17, 7d
     NL Search UI                :f6, 2026-02-24, 7d
     UI Polish                   :f7, 2026-03-03, 14d
     
-    section Full Stack / QA
-    CI/CD Setup                 :q1, 2026-01-20, 5d
+    section Full Stack QA
+    CI CD Setup                 :q1, 2026-01-20, 5d
     Testing Framework           :q2, 2026-01-25, 7d
-    API Contract / OpenAPI      :q3, 2026-02-01, 5d
-    Integration Tests           :q4, 2026-02-06, ongoing, 2026-03-15
+    API Contract OpenAPI        :q3, 2026-02-01, 5d
+    Integration Tests           :q4, 2026-02-06, 37d
     Documentation               :q5, 2026-03-01, 21d
-    Bug Fixes & Support         :q6, 2026-02-15, 40d
     
-    section Phase 6: Final (All)
+    section Final
     Testing Sprint              :p6a, 2026-04-01, 10d
     Documentation Final         :p6b, 2026-04-11, 7d
     Presentation Prep           :p6c, 2026-04-18, 6d
-    Final Presentation          :milestone, p6d, 2026-04-24, 1d
 ```
 
 ## Parallel Work Summary
@@ -70,50 +68,6 @@ gantt
 | 11-12 | Support + review | Polish | Prompt refinement | UI polish | Documentation |
 | 13-14 | Presentation | Presentation | Presentation | Presentation | Presentation |
 
-## Critical Dependencies
-```mermaid
-flowchart LR
-    subgraph Week 1-2
-        A[Repo & Docs]
-    end
-    
-    subgraph Week 3-4
-        B[API Endpoints]
-        C[Scraper Prototype]
-        D[Prompt Prototypes]
-        E[Mock UI]
-        F[OpenAPI Spec]
-    end
-    
-    subgraph Week 5-6
-        G[Scrapers → DB]
-        H[LLM Service]
-        I[UI → Real API]
-    end
-    
-    subgraph Week 7+
-        J[Full Integration]
-    end
-    
-    A --> B
-    A --> C
-    A --> D
-    A --> E
-    A --> F
-    
-    B --> G
-    B --> I
-    F --> E
-    
-    C --> G
-    D --> H
-    G --> H
-    
-    H --> J
-    I --> J
-    G --> J
-```
-
 ## Milestone Checkpoints
 
 | Date | Milestone | Who Presents |
@@ -121,9 +75,9 @@ flowchart LR
 | Jan 23 | Problem Statement & Timeline | Coordinator |
 | Feb 7 | System Requirements Spec | All |
 | Feb 14 | Backend API Demo | Coordinator |
-| Feb 21 | Scraper Demo (data flowing) | Data Engineer |
+| Feb 21 | Scraper Demo | Data Engineer |
 | Mar 1 | Architecture Design Doc | All |
-| Mar 7 | Frontend Demo (with real data) | Frontend Dev |
+| Mar 7 | Frontend Demo | Frontend Dev |
 | Mar 15 | Midcourse Presentation | All |
 | Mar 21 | LLM Integration Demo | AI Engineer |
 | Apr 10 | Feature Complete | All |
@@ -134,7 +88,7 @@ flowchart LR
 | Risk | Mitigation | Owner |
 |------|------------|-------|
 | Backend delays block everyone | OpenAPI spec + mock data enables parallel work | Full Stack |
-| Scraper sources change/break | Build 3-5 scrapers, only need 2 working | Data Engineer |
+| Scraper sources change or break | Build 3-5 scrapers, only need 2 working | Data Engineer |
 | LLM responses unpredictable | Start prompt engineering early, iterate | AI Engineer |
 | Integration issues | Weekly integration checkpoints | Full Stack |
 | Scope creep | MVP first, stretch goals documented separately | Coordinator |
