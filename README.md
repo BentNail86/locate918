@@ -89,7 +89,7 @@ An AI-powered event aggregator for the Tulsa (918) area that pulls from multiple
 | LLM Service | Python (FastAPI) + Google Gemini | Ben |
 | Event Scrapers | Rust (in backend) or Python (standalone) | Skylar |
 | Frontend | React / JavaScript | Malachi |
-| FullStack/QA | Jordi |
+| FullStack/QA | Rust, Python, React | Jordi |
 ---
 
 ## Team Roles
