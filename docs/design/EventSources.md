@@ -293,7 +293,7 @@ This document tracks potential data sources for the Locate918 event aggregator.
 
 ## Recommended Starting Points
 
-For MVP, Skylar should prioritize these sources:
+ Prioritize these sources:
 
 ### Tier 1 (Start here)
 1. **Eventbrite** - Has API, many events, structured data
