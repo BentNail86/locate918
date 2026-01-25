@@ -1,8 +1,8 @@
+
 <p align="center">
   <img src="./logo.png" alt="locate 918" width="400">
 </p>
 
-# locate 918
 
 
 # Locate918 - Event Discovery Aggregator
