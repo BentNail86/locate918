@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="./locate918" alt="locate 918" width="400">
+  <img src="./Locate918" alt="locate 918" width="400">
 </p>
 
 
