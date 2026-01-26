@@ -89,13 +89,18 @@ Copy this for each new meeting:
 - Api is built * changes to the database structure- normalize first
 - FrontEnd- Mock up in production
 - LLm structure is started
-- 
+- Jordi has created a testing CI pipeline- once scrapers are built we can begin testing.
+- Timline and requirements. Still need UML charts
 
 #### Blockers / Issues
-- s
+- Need to make sure the API normalizes the data before storing it in the database
+- find a rust library that can map python for the scrapers
+
 
 #### Decisions Made
-- 
+- Skylar to look into Rust language for scraper logic. 
+- Application will be search engine based with a generative AI element. 
+- Will look inot gemini free plan vs claude for token costs. 
 
 #### Action Items
 | Task | Owner | Due Date |
