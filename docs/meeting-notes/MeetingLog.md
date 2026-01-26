@@ -8,7 +8,7 @@ Weekly meeting summaries for the Locate918 team.
 
 Copy this for each new meeting:
 ```
-### Week X - [Date]
+### Week [Date]
 
 **Attendees:** 
 
@@ -76,5 +76,31 @@ Copy this for each new meeting:
 #### Notes
 - Team kickoff successful
 - All members assigned and clear on responsibilities
+
+---
+
+```
+### January 25, 2025
+
+**Attendees: Will ,Ben, Skylar, Malachi, Jordi** 
+
+**Duration: start 6:30 end ** 
+
+#### Progress Since Last Meeting
+- 
+
+#### Blockers / Issues
+- s
+
+#### Decisions Made
+- 
+
+#### Action Items
+| Task | Owner | Due Date |
+|------|-------|----------|
+|  |  |  |
+
+#### Notes
+- 
 
 ---
