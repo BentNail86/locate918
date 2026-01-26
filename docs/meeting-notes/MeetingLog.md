@@ -29,7 +29,7 @@ Copy this for each new meeting:
 |  |  |  |
 
 #### Notes
-- 
+- We have decided to make a hybrid search engine featuring an AI interface that will power the search or double as a chat bot when needed.
 
 ---
 ```
